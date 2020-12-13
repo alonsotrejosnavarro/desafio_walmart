@@ -1,6 +1,6 @@
 #!/bin/bash
-app="docker.test"
+app="docker.walmart"
 docker build -t ${app} .
-docker run -d -p 56733:80 \
+docker run -d -p 56735:80 \
   --name=${app} \
   -v $PWD:/app ${app}
