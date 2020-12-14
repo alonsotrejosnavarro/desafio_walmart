@@ -1,12 +1,15 @@
 import os
 from flask import Flask
-from Flask-Pymongo import PyMongo
+import pymongo
 
 app = Flask(__name__)
 app.config['TESTING'] = True
 app.config['SECRET_KEY'] = 'W-H]!/D/hHaRvY!+/z-|'
-app.config['MONGO_URI'] = 'mongodb://productListUser:productListPassword@127.0.0.1:27017/promotions'
 app.config.from_pyfile('config.py', silent=True)
+
+
+client = pymongo.MongoClient("mongodb://productListUser:productListPassword@0.0.0.0:27017/")
+mongo = client['promotions'] 
 
 # ensure the instance folder exists
 try:
