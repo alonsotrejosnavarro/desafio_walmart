@@ -1,7 +1,7 @@
 #!/bin/bash
-app="flask/wal"
+app="docker.walmart"
 docker build -t ${app} .
-sudo docker run -p 8003:8003 flask/wal
+#sudo docker run -d -p 8003:80  flask/wal
 
 #docker run -d -p 56735:80 \
 #  --name=${app} \

@@ -9,5 +9,5 @@ ENV STATIC_URL /static
 ENV STATIC_PATH /app/app/static
 COPY ./requirements.txt /app/requirements.txt
 RUN pip install -r /app/requirements.txt
-CMD ["gunicorn","-b","0.0.0.0:8000","app:app"]	
+CMD ["gunicorn","-b","0.0.0.0","app:app"]	
 
