@@ -1,6 +1,7 @@
 from flask import render_template
 from app import app,mongo
 from bson.json_util import dumps
+import utils
 
 @app.route('/')
 def home():
@@ -42,10 +43,3 @@ def test_brand():
     json_data = dumps(list_cur)
     print(json_data)
     return json_data
-
-def isPalindrome(s):
-    return s == s[::-1]
-
-def halfPrice(s):
-    return int(s/2)+(s/2 > 0)
-
