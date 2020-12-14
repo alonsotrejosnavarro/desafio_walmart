@@ -1,3 +1,2 @@
-sudo docker stop docker.walmart
-sudo docker rm docker.walmart
-sudo bash start.sh
+docker build -t flask/wal .
+docker run -p 8003:8003 flask/wal
