@@ -1,4 +1,5 @@
 import os
+import dns
 from flask import Flask
 import pymongo
 
@@ -7,8 +8,12 @@ app.config['TESTING'] = True
 app.config['SECRET_KEY'] = 'W-H]!/D/hHaRvY!+/z-|'
 app.config.from_pyfile('config.py', silent=True)
 
+    
+#client = pymongo.MongoClient("mongodb://productListUser:productListPassword@0.0.0.0:27017/")
+client = pymongo.MongoClient("mongodb+srv://productListUser:productListPassword@cluster0.glk1i.mongodb.net/?retryWrites=true&w=majority",
+        tls=True,
+        tlsAllowInvalidCertificates=True)
 
-client = pymongo.MongoClient("mongodb://productListUser:productListPassword@0.0.0.0:27017/")
 mongo = client['promotions'] 
 
 # ensure the instance folder exists
