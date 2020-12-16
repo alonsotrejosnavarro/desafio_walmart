@@ -14,3 +14,7 @@ heroku container:release web
 
 Se accede desde la url http://serene-crag-46640.herokuapp.com/
 
+Para correr test unitarios:
+Levantar en local con las instrucciones anteriores, luego ejecutar python testing.py
+Dentro del archivo testing.py se encuentran los tests.
+
