@@ -1,14 +1,58 @@
-<!doctype html>
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+	{% block title %}
+		{% if title %}
+		{{ title }} - Búsqueda Líder
+        {% else %}
+        Búsqueda Líder
+        {% endif %}
+	{% endblock %}
+	
+{% block app_content %}
+	<form id="search_form" action = "" method="GET" novalidate>
+		
 
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Welcome home</title>
-  </head>
+	<div class="container align-items-center justify-content-center rounded" >
+		<div class="row" id="topbar">
+			  <div class="col-md-12">
+				  
+				 <img src="./static/logo.png"/>
+ 
+				<div class="form-group">
+					  {{ wtf.form_field(form.search, class='form-control',placeholder='Buscar') }}
+					  
+					  {% for error in form.search.errors %}
+					  <span style="color: red;">[{{ error }}]</span>
+						  {% endfor %}
+				</div> 
+							
+							
+							
+			  </div> 
+		</div>
+	  
+	  
+	  </div>
 
-  <body>
-    <h1>Home Page</h1>
-    <p>This is the home page of our application.</p>
-  </body>
-</html>
+	</form>
+
+
+	<div class="container">
+			<div class="row item-box" >
+				<div class="col-md-12">
+					<div id="productList"></div>				
+				</div>
+			</div>
+	</div>
+
+
+	<br />
+	<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div id="message" class = "alert" role="alert"></div>				
+				</div>
+			</div>
+	</div>
+
+{% endblock %}

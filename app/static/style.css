@@ -1,0 +1,31 @@
+/* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+
+hr{
+	border-top:#000000; 
+	
+}
+	
+.alert {
+   width:80%;    
+}
+
+#topbar{
+	background-color:#0071ce
+}
+
+.item-box{
+	background-color:#cccccc
+}
+
+@media screen and (max-width : 992px) {
+hr.hdiv{
+	display:block;
+ 	} 
+div.vline{
+	display:none;
+}	
+body{
+	background-color:#ffffff; /*222222 */
+	
+}   
+}
